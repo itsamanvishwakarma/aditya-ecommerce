@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -179,7 +180,7 @@ const Post = ({ addToCart }) => {
                 <span className="title-font font-semibold text-2xl text-gray-900">
                   ₹499
                 </span>
-                <button className="flex ml-10 text-sm text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                <button className="flex md:ml-10 ml-4 text-sm text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                   Buy Now
                 </button>
                 <button
