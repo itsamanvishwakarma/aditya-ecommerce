@@ -10,6 +10,7 @@ import {
 import { FiShoppingCart } from "react-icons/fi";
 import { BiTrash } from "react-icons/bi";
 import { BsFillBagCheckFill } from "react-icons/bs";
+import { MdAccountCircle } from "react-icons/md";
 
 const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
   const toggleCart = () => {
@@ -43,11 +44,14 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
             </Link>
           </ul>
         </div>
-        <div
-          onClick={toggleCart}
-          className="cursor-pointer cart absolute right-0 top-4 mx-5"
-        >
-          <FiShoppingCart className="text-xl md:text-2xl" />
+        <div className="cursor-pointer cart absolute right-0 top-4 mx-5 flex">
+          <FiShoppingCart
+            onClick={toggleCart}
+            className="text-xl md:text-2xl mx-3"
+          />
+          <Link href={"/login"}>
+            <MdAccountCircle className="text-xl md:text-2xl" />
+          </Link>
         </div>
         {/* Sidebar Shopping Cart */}
         <div
