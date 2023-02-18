@@ -24,7 +24,7 @@ const Navbar = () => {
   const ref = useRef();
   return (
     <>
-      <div className="flex flex-col md:flex-row md:justify-start justify-center items-center py-2 shadow-lg">
+      <div className="flex flex-col md:flex-row md:justify-start justify-center items-center py-2 shadow-xl">
         <div className="logo mx-5">
           <Link href={"/"}>
             <Image src="/logo.png" alt="" width={100} height={20} />

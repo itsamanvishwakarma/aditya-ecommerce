@@ -27,8 +27,8 @@ const Post = () => {
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             <img
               alt="ecommerce"
-              className="lg:w-1/2 w-full lg:h-auto px-24 object-cover object-top rounded"
-              src="https://m.media-amazon.com/images/I/71J2iKXO5wL._AC_UL320_.jpg"
+              class="lg:w-1/2 w-full lg:h-full py-14 px-24 object-cover object-top rounded"
+              src="https://m.media-amazon.com/images/I/719Gu56YhaL._UY535_.jpg"
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">
@@ -175,17 +175,17 @@ const Post = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex">
+              <div className="flex flex-wrap items-center justify-center">
                 <span className="title-font font-medium text-2xl text-gray-900">
                   ₹499
                 </span>
-                <button className="flex ml-8 text-white bg-indigo-500 border-0 text-sm py-2 md:px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                <button className="flex ml-10 text-sm text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                   Buy Now
                 </button>
-                <button className="flex ml-4 text-white bg-indigo-500 border-0 text-sm py-2 md:px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                <button className="flex ml-auto md:ml-6 text-sm text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                   Add to Cart
                 </button>
-                <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                <button className="flex-shrink-0 rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                   <svg
                     fill="currentColor"
                     strokeLinecap="round"
@@ -198,6 +198,7 @@ const Post = () => {
                   </svg>
                 </button>
               </div>
+
               {/* Pincode Checker */}
               <div className="pin mt-6 flex space-x-2 text-sm">
                 <input
