@@ -1,12 +1,16 @@
 import React from "react";
+import Link from "next/link";
+import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
+import { BiTrash } from "react-icons/bi";
+import { BsFillBagCheckFill } from "react-icons/bs";
 
-const Checkout = () => {
+const Checkout = ({ cart, subTotal, addToCart, removeFromCart }) => {
   return (
     <>
-      <div className="container m-auto">
+      <div className="container m-auto px-4">
         <h1 className="font-bold text-3xl my-8 text-center">Checkout</h1>
         <h2 className="font-semibold text-xl">1. Delivery Details</h2>
-        <div className="mx-auto flex my-4">
+        <div className="mx-auto flex my-2">
           <div className="px-2 w-1/2">
             <div class="mb-4">
               <label htmlfor="name" className="leading-7 text-sm text-gray-600">
@@ -54,7 +58,7 @@ const Checkout = () => {
             ></textarea>
           </div>
         </div>
-        <div className="mx-auto flex my-4">
+        <div className="mx-auto flex my-2">
           <div className="px-2 w-1/2">
             <div class="mb-4">
               <label
@@ -85,7 +89,7 @@ const Checkout = () => {
             </div>
           </div>
         </div>
-        <div className="mx-auto flex my-4">
+        <div className="mx-auto flex my-2">
           <div className="px-2 w-1/2">
             <div class="mb-4">
               <label
@@ -118,6 +122,59 @@ const Checkout = () => {
               />
             </div>
           </div>
+        </div>
+        <h2 className="font-semibold text-xl">2. Review Cart Items & Pay</h2>
+        <div className="sideCart bg-indigo-100 p-6 m-2">
+          <ol className="list-decimal font-semibold">
+            {Object.keys(cart).length == 0 && (
+              <div className="my-4 font-semibold">Your Cart is Empty!</div>
+            )}
+            {Object.keys(cart).map((k) => {
+              return (
+                <li key={k}>
+                  <div className="item flex my-5">
+                    <div className="font-semibold">{cart[k].name}</div>
+                    <div className="flex font-semibold items-center justify-center w-1/3 text-lg">
+                      <AiFillMinusCircle
+                        onClick={() => {
+                          removeFromCart(
+                            k,
+                            1,
+                            cart[k].price,
+                            cart[k].name,
+                            cart[k].size,
+                            cart[k].variant
+                          );
+                        }}
+                        className="cursor-pointer text-indigo-500"
+                      />
+                      <span className="mx-2 text-sm">{cart[k].qty}</span>
+                      <AiFillPlusCircle
+                        onClick={() => {
+                          addToCart(
+                            k,
+                            1,
+                            cart[k].price,
+                            cart[k].name,
+                            cart[k].size,
+                            cart[k].variant
+                          );
+                        }}
+                        className="cursor-pointer text-indigo-500"
+                      />
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+          <span className="font-bold">Subtotal: ₹{subTotal}</span>
+        </div>
+        <div className="mx-4">
+          <button className="flex mr-2 text-white bg-indigo-500 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-sm">
+            <BsFillBagCheckFill className="m-1" />
+            Pay ₹{subTotal}
+          </button>
         </div>
       </div>
     </>
