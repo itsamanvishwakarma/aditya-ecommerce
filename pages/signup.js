@@ -16,7 +16,7 @@ const Signup = () => {
               Sign up for an account
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
-              Or&nbsp;
+              Already have an account&nbsp;
               <Link
                 href={"/login"}
                 className="font-medium text-indigo-600 hover:text-indigo-500"
