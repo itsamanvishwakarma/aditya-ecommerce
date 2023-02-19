@@ -44,6 +44,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
             </Link>
           </ul>
         </div>
+
         <div className="cursor-pointer cart absolute right-0 top-4 mx-5 flex">
           <FiShoppingCart
             onClick={toggleCart}

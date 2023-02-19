@@ -28,7 +28,7 @@ const Post = ({ addToCart }) => {
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             <img
               alt="ecommerce"
-              class="lg:w-1/2 w-full lg:h-full py-14 object-cover object-top rounded"
+              className="lg:w-1/2 w-full lg:h-full py-14 object-cover object-top rounded"
               src="https://m.media-amazon.com/images/I/719Gu56YhaL._UY535_.jpg"
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
