@@ -10,11 +10,11 @@ const ShoulderBag = ({ products }) => {
     <div>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -m-4 justify-center">
+          <div className="grid lg:grid-cols-4 md:grid-cols-1 sm:grid-cols-1 gap-4">
             {products.map((item) => {
               return (
                 <Link key={item._id} href={"/product/Stand-out-from-the-crowd"}>
-                  <div className="lg:w-1/5 md:w-1/2 p-4 w-full shadow-lg m-5">
+                  <div className="lg:w-auto md:w-auto p-4 w-full shadow-lg m-5">
                     <a className="block relative rounded overflow-hidden">
                       <img
                         alt="ecommerce"
