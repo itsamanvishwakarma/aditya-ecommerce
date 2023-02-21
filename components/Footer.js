@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 function Footer() {
   return (
@@ -9,31 +10,52 @@ function Footer() {
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
           <Link href="/">
-            <span className="flex title-font font-medium items-center md:justify-start justify-center text-white">
-              <Image src="/logo.png" alt="" width={100} height={2} />
+            <span className="flex title-font font-medium items-center md:justify-start justify-center text-white ml-2">
+              <Image src="/logo.png" alt="" width={100} height={20} />
             </span>
           </Link>
-          <p className="mt-2 text-sm text-gray-500 px-4">
-            Air plant banjo lyft occupy retro adaptogen indego
+          <p className="mt-2 text-sm text-gray-500 px-2">
+            Your Fashion Store - Get Premium Quality Product From Your Own
+            Store.
           </p>
         </div>
         <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
+              SHOP
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
+                <Link
+                  href={"/shoulderBag"}
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  Shoulder Bag
+                </Link>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+                <Link
+                  href={"/slingBag"}
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  Sling Bag
+                </Link>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+                <Link
+                  href={"/wallet"}
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  Wallet
+                </Link>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                {/* <Link
+                  href={"/schoolBag"}
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  School Bag
+                </Link> */}
               </li>
             </nav>
           </div>
@@ -58,9 +80,17 @@ function Footer() {
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
+              CONTACT US
             </h2>
             <nav className="list-none mb-10">
+              {/* <li>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=7011735870&text&type=phone_number&app_absent=0"
+                  className="text-gray-600 hover:text-indigo-600"
+                >
+                  <IoLogoWhatsapp className="text-4xl" />
+                </a>
+              </li> */}
               <li>
                 <a className="text-gray-600 hover:text-gray-800">First Link</a>
               </li>
@@ -77,21 +107,11 @@ function Footer() {
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
+              MAIL US
             </h2>
             <nav className="list-none mb-10">
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
+              Godown No. 45, Gali No. 2, Vikas Mandal, Khera Garhi, New Delhi -
+              110082
             </nav>
           </div>
         </div>
@@ -99,17 +119,12 @@ function Footer() {
       <div className="bg-gray-100">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-gray-500 text-sm text-center sm:text-left">
-            © 2020 Tailblocks —
-            <a
-              href="https://twitter.com/knyttneve"
-              rel="noopener noreferrer"
-              className="text-gray-600 ml-1"
-              target="_blank"
-            >
-              @knyttneve
-            </a>
+            © 2020 Radhey Krishna Collections — All Rights Reserved
           </p>
-          <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+
+          {/* Social Media Links */}
+
+          {/* <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
             <a className="text-gray-500">
               <svg
                 fill="currentColor"
@@ -165,7 +180,7 @@ function Footer() {
                 <circle cx="4" cy="4" r="2" stroke="none" />
               </svg>
             </a>
-          </span>
+          </span> */}
         </div>
       </div>
     </footer>

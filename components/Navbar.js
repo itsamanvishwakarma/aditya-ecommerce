@@ -34,13 +34,13 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
         <div className="nav">
           <ul className="flex items-center space-x-6 font-bold md:text-md">
             <Link href={"/shoulderBag"}>
-              <li>Shoulder Bag</li>
+              <li className="hover:text-indigo-600">Shoulder Bag</li>
             </Link>
             <Link href={"/slingBag"}>
-              <li>Sling Bag</li>
+              <li className="hover:text-indigo-600">Sling Bag</li>
             </Link>
             <Link href={"/wallet"}>
-              <li>Wallet</li>
+              <li className="hover:text-indigo-600">Wallet</li>
             </Link>
           </ul>
         </div>
@@ -57,7 +57,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
         {/* Sidebar Shopping Cart */}
         <div
           ref={ref}
-          className={`w-72 h-[100vh] sideCart absolute top-0 right-0 bg-indigo-200 px-8 py-10 transform transition-transform ${
+          className={`w-72 h-[100vh] sideCart overflow-y-scroll absolute top-0 right-0 bg-indigo-200 px-8 py-10 transform transition-transform ${
             Object.keys(cart).length !== 0
               ? "translate-x-0"
               : "translate-x-full"
@@ -78,7 +78,9 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
               return (
                 <li key={k}>
                   <div className="item flex my-5">
-                    <div className="w-2/3 font-semibold">{cart[k].name}</div>
+                    <div className="w-2/3 font-semibold">
+                      {cart[k].name}({cart[k].size}/{cart[k].variant})
+                    </div>
                     <div className="flex font-semibold items-center justify-center w-1/3 text-lg">
                       <AiFillMinusCircle
                         onClick={() => {

@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useRouter } from "next/router";
 
 function App({ Component, pageProps }) {
   const [cart, setCart] = useState({});
   const [subTotal, setSubTotal] = useState(0);
+  const router = useRouter();
   // Add Cart To Local Storage
   useEffect(() => {
     try {
@@ -40,6 +42,14 @@ function App({ Component, pageProps }) {
     setCart(newCart);
     saveCart(newCart);
   };
+
+  // Buy Now
+  const buyNow = (itemCode, qty, price, name, size, variant) => {
+    let newCart = { slug: { qty: 1, price, name, size, variant } };
+    setCart(newCart);
+    saveCart(newCart);
+    router.push("/checkout");
+  };
   // Clear Cart
   const clearCart = () => {
     setCart({});
@@ -68,6 +78,7 @@ function App({ Component, pageProps }) {
         subTotal={subTotal}
       />
       <Component
+        buyNow={buyNow}
         cart={cart}
         addToCart={addToCart}
         removeFromCart={removeFromCart}
